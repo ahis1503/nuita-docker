@@ -42,13 +42,16 @@ RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - && \
 
 # Setup
 
-ENV APP_ROOT /app
+ENV APP_ROOT /nuita
 RUN git clone https://github.com/nuita/nuita.git $APP_ROOT
 WORKDIR $APP_ROOT
+RUN git checkout create-basic-api
 
-RUN bundle install && yarn install --check-files
+RUN cd server && bundle install
+RUN cd client && yarn install --check-files
 
 EXPOSE 3000
+EXPOSE 4000
 
 COPY entrypoint.sh /usr/local/bin/
 ENTRYPOINT ["entrypoint.sh"]
