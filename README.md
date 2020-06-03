@@ -1,3 +1,5 @@
+__このブランチはnuita#master用のコンテナです。Reactを導入したnuita#create-basic-apiの[reactブランチ](https://github.com/ahis1503/nuita-docker/tree/react)もあります__
+
 # nuita-docker
 
 １コマンドで[Nuita](https://github.com/nuita/)の開発環境を立ち上げるためのコンテナ
